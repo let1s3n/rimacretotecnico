@@ -1,4 +1,36 @@
 @import '@/sass/abstracts/variables';
 @import 'bootstrap/scss/mixins';
 
+.loginContainer {
+  padding: 6rem 0px 7rem;
+  overflow: hidden;
+  display: flex;
+  column-gap: 8rem;
 
+  &__right {
+    display: flex;
+    flex-direction: column;
+    max-width: 352px;
+  }
+}
+
+.blurAssetLeft {
+  position: absolute;
+  left: 0px;
+  top: 0px;
+}
+.blurAssetRight {
+  position: absolute;
+  right: 0px;
+  top: 0px;
+}
+
+.customGradient {
+  background: $gradient1;
+  width: 172px;
+  height: 24px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 4px;
+}

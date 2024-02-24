@@ -12,7 +12,7 @@ const NavBar = () => {
   const handleShow = () => setShow(true);
   return (
     <Navbar
-      className={styles.customNavbar + ' p-0 w-100'}
+      className={styles.customNavbar + ' p-0 position-absolute top-0 w-100'}
       bg="transparent"
       expand="lg"
     >
@@ -24,7 +24,7 @@ const NavBar = () => {
         >
           <Image
             className={styles.logo}
-            src="/images/logo.svg"
+            src={`${process.env.NEXT_PUBLIC_CDN}images/general/logo2.svg`}
             alt="Rimac Logo"
             width={74}
             height={0}
@@ -37,12 +37,23 @@ const NavBar = () => {
         <Navbar.Toggle className={styles.toggler} onClick={handleShow} />
         <Nav
           className="d-none d-lg-flex align-items-center"
-          style={{ columnGap: '2rem', rowGap: '2rem' }}
+          style={{ columnGap: '1rem', rowGap: '1rem' }}
         >
-          <Nav.Link className="position-relative p-0 text-lg-white" href="/">
+          <Nav.Link className="position-relative p-0 text-gray100" href="/">
             ¡Compra por este medio!
           </Nav.Link>
-          
+
+          <Nav.Link className="position-relative p-0 text-gray100" href="/">
+            <Image
+              src={`${process.env.NEXT_PUBLIC_CDN}images/general/phoneIcon.svg`}
+              alt="Phone Icon"
+              width={20}
+              height={0}
+              style={{ height: 'auto' }}
+              quality={100}
+            />
+            (01) 411 6001
+          </Nav.Link>
         </Nav>
         <Offcanvas show={show} onHide={handleClose}>
           <Offcanvas.Header closeButton>
@@ -59,7 +70,6 @@ const NavBar = () => {
               >
                 ¡Compra por este medio!
               </Nav.Link>
-              
             </Nav>
           </Offcanvas.Body>
         </Offcanvas>

@@ -4,7 +4,12 @@ import withPlaiceholder from '@plaiceholder/next';
 const nextConfig = {
   reactStrictMode: true,
   images: {
-    domains: ['d2fap8ni6v2bu4.cloudfront.net'],
+    remotePatterns: [
+      {
+        protocol: 'https',
+        hostname: 'd2dtyuc8nw4dj9.cloudfront.net',
+      },
+    ],
   },
   devIndicators: {
     buildActivity: false,

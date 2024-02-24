@@ -1,8 +1,25 @@
 @import 'bootstrap/scss/functions';
 
+$container-max-widths: (
+  sm: 540px,
+  md: 720px,
+  lg: 960px,
+  xl: 1140px,
+  xxl: 1200px
+);
+
 @import 'bootstrap/scss/variables';
+
+$cdn: 'https://d2dtyuc8nw4dj9.cloudfront.net/rimacretotecnico/';
 
 // Esto se tiene que poner en bootstrap 5.3
 /* @import 'bootstrap/scss/variables-dark'; */
 
+//Colors
+$desactivado: #898989;
+$gray10: #f8f9ff;
+$gray60: #5e6488;
+$gray100: #03050f;
 
+//Gradient
+$gradient1:linear-gradient(90deg,#00F4E2 0%,#00FF7F 100%)

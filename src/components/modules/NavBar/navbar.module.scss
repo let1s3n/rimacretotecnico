@@ -7,7 +7,7 @@
   align-items: center;
   justify-content: center;
   color: #ffffff;
-  
+
   @include media-breakpoint-up(xl) {
     height: 64px;
   }
@@ -26,11 +26,10 @@
     color: #ffffff !important;
   }
   .logo {
-    width: 40px;
-
+    width: 65px;
+    z-index: 1000;
     @include media-breakpoint-up(md) {
-      width: 53px;
+      width: 74px;
     }
   }
 }
-
