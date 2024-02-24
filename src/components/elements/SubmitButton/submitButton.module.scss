@@ -1,0 +1,28 @@
+@import '@/sass/abstracts/variables';
+@import 'bootstrap/scss/mixins';
+
+.submitButton {
+  width: 336px;
+  height: 56px;
+  border-radius: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 18px;
+  line-height: 20px;
+  font-weight: 700;
+  background-color: $gray100;
+  color: $white;
+  border: none;
+  @include media-breakpoint-up(md) {
+    width: 195px;
+    height: 64px;
+    font-size: 20px;
+    line-height: 24px;
+  }
+}
+
+.inactive {
+  background-color: $gray10;
+  color: $desactivado;
+}

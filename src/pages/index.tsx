@@ -1,7 +1,10 @@
+import React, { useState, useEffect, Dispatch, SetStateAction } from 'react';
 import Home from '@/components/templates/Home/home';
 import Head from 'next/head';
-
-const index = () => {
+interface Props {
+  setUserData: Dispatch<SetStateAction<string>>;
+}
+const index = ({ setUserData }: Props) => {
   return (
     <>
       <Head>
@@ -10,7 +13,7 @@ const index = () => {
           Inversión
         </title>
       </Head>
-      <Home />
+      <Home setUserData={setUserData} />
     </>
   );
 };

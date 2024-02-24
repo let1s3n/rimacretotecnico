@@ -1,0 +1,15 @@
+@import '@/sass/abstracts/variables';
+@import 'bootstrap/scss/mixins';
+
+.customForm {
+  display: flex;
+  flex-direction: column;
+  row-gap: 1rem;
+}
+.customInput {
+  height: 56px !important;
+  min-height: unset !important;
+
+  border: 1px solid $gray60;
+  border-radius: 8px;
+}

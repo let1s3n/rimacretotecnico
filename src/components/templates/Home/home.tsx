@@ -1,12 +1,25 @@
+import React, { useState, useEffect,Dispatch, SetStateAction } from 'react';
 import useWindowDimensions from '@/hooks/useWindowDimensions';
 import { GetStaticProps, InferGetStaticPropsType } from 'next';
 import Image from 'next/image';
 import Link from 'next/link';
 import { Button, Container, Row } from 'react-bootstrap';
+import CustomForm from '@/components/modules/CustomForm/customForm';
 import { lato } from '@/lib/fonts';
 import styles from './home.module.scss';
-const Home = ({ imageProps }: InferGetStaticPropsType<GetStaticProps>) => {
+
+interface Props {
+  
+  setUserData: Dispatch<SetStateAction<string>>
+}
+
+const Home = ({ setUserData }: Props) => {
   const { width, height } = useWindowDimensions();
+
+  useEffect(() => {
+    console.log('setUserData: ', setUserData);
+  }, []);
+
   return (
     <Container className={styles.loginContainer + ' g-0 border border-black'}>
       <Image
@@ -20,16 +33,23 @@ const Home = ({ imageProps }: InferGetStaticPropsType<GetStaticProps>) => {
         quality={100}
       />
       <div className={styles.loginContainer__right}>
-        <div className={styles.customGradient + ' BRSonomaBold fw-bold fs-14'}>
-          <p className="lh-base">Seguro Salud Flexible</p>
+        <div>
+          <div
+            className={
+              styles.customGradient + ' BRSonomaBold fw-bold fs-14 mb-3'
+            }
+          >
+            <p className="lh-base">Seguro Salud Flexible</p>
+          </div>
+          <p className="fs-2 BRSonomaBold fw-bold lh40 mb-2">
+            Creado para ti y tu familia
+          </p>
+          <p className="fs-14 BRSonomaMedium fw-medium lh20">
+            Tú eliges cuánto pagar. Ingresa tus datos, cotiza y recibe nuestra
+            asesoría. 100% online.
+          </p>
         </div>
-        <p className="fs-2 BRSonomaBold fw-bold lh40">
-          Creado para ti y tu familia
-        </p>
-        <p className="fs-14 BRSonomaMedium fw-medium lh20">
-          Tú eliges cuánto pagar. Ingresa tus datos, cotiza y recibe nuestra
-          asesoría. 100% online.
-        </p>
+        <CustomForm setUserData={setUserData} />
       </div>
       <Image
         className={styles.blurAssetLeft}

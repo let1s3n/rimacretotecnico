@@ -29,6 +29,9 @@ dl {
 .fs-14 {
   font-size: $font-size-sm;
 }
+.fs-12 {
+  font-size: 12px;
+}
 
 .lh20 {
   line-height: 20px;
@@ -36,4 +39,34 @@ dl {
 
 .lh40 {
   line-height: 40px;
+}
+
+.form-check-input:checked {
+  background-color: $gray100 !important;
+  /* border-color: $azul-texto; */
+}
+
+.form-control {
+  &:focus {
+    box-shadow: unset !important;
+    border-color: $gray60 !important;
+  }
+}
+.form-select {
+  &:focus {
+    box-shadow: unset !important;
+    border-color: $gray60 !important;
+  }
+}
+
+.form-check-input {
+  width: 20px !important;
+  height: 20px !important;
+  margin-top: 0px !important;
+  &:checked {
+    border-color: unset !important;
+  }
+  &:focus {
+    box-shadow: unset !important;
+  }
 }
