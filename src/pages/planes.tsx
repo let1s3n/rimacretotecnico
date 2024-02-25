@@ -5,8 +5,14 @@ import { UserContext } from '@/pages/_app';
 import { createContext, useContext } from 'react';
 import { GetStaticProps, InferGetStaticPropsType } from 'next';
 
-const planes = () => {
+const planes = ({
+  userRes,
+  plansRes,
+}: InferGetStaticPropsType<GetStaticProps>) => {
   const userData = useContext(UserContext);
+
+ 
+
   return (
     <>
       <Head>
@@ -15,9 +21,24 @@ const planes = () => {
           Inversión
         </title>
       </Head>
-      <Planes userData={userData} />
+      <Planes userData={userData} userRes={userRes} plansRes={plansRes} />
     </>
   );
 };
 
 export default planes;
+
+export async function getServerSideProps() {
+  const user = await fetch(`${process.env.NEXT_PUBLIC_API}user.json`);
+  const userRes = await user.json();
+
+  const plans = await fetch(`${process.env.NEXT_PUBLIC_API}plans.json`);
+  const plansRes = await plans.json();
+
+  return {
+    props: {
+      userRes,
+      plansRes,
+    },
+  };
+}

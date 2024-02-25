@@ -8,14 +8,18 @@ import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
 import Slider from 'react-slick';
 import styles from './planes.module.scss';
-const planes = ({ userData }: InferGetStaticPropsType<GetStaticProps>) => {
+const planes = ({
+  userData,
+  userRes,
+  plansRes,
+}: InferGetStaticPropsType<GetStaticProps>) => {
   useEffect(() => {
     console.log('userData: ', userData);
   }, [userData]);
   var settings = {
     dots: true,
     infinite: false,
-    centerMode:true,
+    centerMode: true,
     speed: 500,
     slidesToShow: 1.05,
     slidesToScroll: 1,
@@ -56,15 +60,15 @@ const planes = ({ userData }: InferGetStaticPropsType<GetStaticProps>) => {
             </div>
 
             <div className="d-none d-md-flex" style={{ columnGap: '2rem' }}>
-              <PlanCard />
-              <PlanCard />
-              <PlanCard />
+              <PlanCard userData={userData} />
+              <PlanCard userRes={userRes} plansRes={plansRes} />
+              <PlanCard userRes={userRes} plansRes={plansRes} />
             </div>
             <Container fluid className="g-0 d-md-none">
               <Slider {...settings}>
-                <PlanCard />
-                <PlanCard />
-                <PlanCard />
+                <PlanCard userRes={userRes} plansRes={plansRes} />
+                <PlanCard userRes={userRes} plansRes={plansRes} />
+                <PlanCard userRes={userRes} plansRes={plansRes} />
               </Slider>
             </Container>
           </div>
