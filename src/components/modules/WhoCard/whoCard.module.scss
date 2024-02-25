@@ -1,0 +1,64 @@
+@import '@/sass/abstracts/variables';
+@import 'bootstrap/scss/mixins';
+
+.radioContainer {
+  input {
+    &:checked {
+      & + .whoCard {
+        .whoCard__radioButton{
+        background-color: $success;
+        box-shadow: 0 0 0 1px inset $success;
+      }
+      }
+    }
+  }
+  /* .whoCard {
+    &__radioButton {
+      background-color: $success;
+      box-shadow: 0 0 0 1px inset $success;
+    }
+  } */
+}
+.whoCard {
+  width: 336px;
+  height: 160px;
+  display: flex;
+  position: relative;
+  align-items: center;
+  border-radius: 1.5rem;
+  box-shadow: 0 1px 32px #aeacf359;
+  cursor: pointer;
+  @include media-breakpoint-up(md) {
+    width: 256px;
+    height: 212px;
+  }
+
+  &__mainContent {
+    display: flex;
+    flex-direction: column;
+    padding: 0rem 1.5rem;
+  }
+
+  &__radioButton {
+    position: absolute;
+    top: 1rem;
+    right: 1.5rem;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    border: 1px solid $neutrals500;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  &__title {
+    font-weight: 900;
+    line-height: 28px;
+  }
+
+  &__text {
+    line-height: 20px;
+    font-size: 12px;
+  }
+}

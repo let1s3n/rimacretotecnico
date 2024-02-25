@@ -1,0 +1,11 @@
+@import '@/sass/abstracts/variables';
+@import 'bootstrap/scss/mixins';
+
+.planCard {
+  width: 288px;
+  height: 687px;
+  background-color: $white;
+  border-radius: 1.5rem;
+  box-shadow: 0 1px 32px #aeacf359;
+  padding: 4.25rem 2rem 51px;
+}

@@ -7,7 +7,7 @@ $container-max-widths: (
   xl: 1140px,
   xxl: 1200px,
 );
-
+$font-weight-bolder: 900;
 @import 'bootstrap/scss/variables';
 
 $cdn: 'https://d2dtyuc8nw4dj9.cloudfront.net/rimacretotecnico/';
@@ -23,7 +23,7 @@ $gray100: #03050f;
 
 $neutrals100: #fafbff;
 $neutrals200: #edeffc;
-
+$neutrals500: #a9afd9;
 $blueberry600: #4f4fff;
 
 //Gradient

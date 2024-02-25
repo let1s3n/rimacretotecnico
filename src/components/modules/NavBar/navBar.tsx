@@ -45,7 +45,7 @@ const NavBar = () => {
 
           <Nav.Link className="position-relative p-0 text-gray100" href="/">
             <Image
-              src={`${process.env.NEXT_PUBLIC_CDN}images/general/phoneIcon.svg`}
+              src={`${process.env.NEXT_PUBLIC_CDN}images/general/icons/phoneIcon.svg`}
               alt="Phone Icon"
               width={20}
               height={0}

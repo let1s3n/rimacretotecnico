@@ -1,5 +1,12 @@
-import React, { useState, useEffect, Dispatch, SetStateAction } from 'react';
+import React, {
+  useState,
+  useEffect,
+  Dispatch,
+  SetStateAction,
+  Suspense,
+} from 'react';
 import useWindowDimensions from '@/hooks/useWindowDimensions';
+
 import { GetStaticProps, InferGetStaticPropsType } from 'next';
 import Image from 'next/image';
 import Link from 'next/link';
@@ -49,7 +56,9 @@ const Home = ({ setUserData }: Props) => {
               asesoría. 100% online.
             </p>
           </div>
-          <CustomForm setUserData={setUserData} />
+          <Suspense fallback={<p>Loading feed...</p>}>
+            <CustomForm setUserData={setUserData} />
+          </Suspense>
         </div>
         <Image
           className={styles.blurAssetLeft}

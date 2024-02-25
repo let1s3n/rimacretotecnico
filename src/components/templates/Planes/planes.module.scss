@@ -8,13 +8,31 @@
     background-color: $neutrals200;
     height: 3.5rem;
     width: 100%;
-    
   }
 
-  &__opciones {
+  &__opcionesSection {
     background-color: $neutrals100;
+    /* padding: 2.5rem 0rem 9.75rem; */
+    padding: 2.5rem 0rem 9.75rem;
+    /* display: flex;
+    align-items: center;
+    justify-content: center; */
     /* height: 3.5rem;
     width: 100%; */
-    
+  }
+  &__opcionesContent {
+    /* padding: 0rem 1.5rem; */
+    padding: 0rem;
+    @include media-breakpoint-up(md) {
+      padding: 4.75rem 6rem 0rem;
+    }
+  }
+
+  &__title {
+    font-weight: 700;
+  }
+  &__text {
+    line-height: 28px;
+    font-weight: 400;
   }
 }

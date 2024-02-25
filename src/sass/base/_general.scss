@@ -70,3 +70,24 @@ dl {
     box-shadow: unset !important;
   }
 }
+
+/* .slider-container {
+  min-height: 0;
+  min-width: 0;
+  padding: 20px;
+} */
+
+.slick-list {
+  @include media-breakpoint-only(xs) {
+    margin: 0 -20px;
+  }
+}
+.slick-slide {
+  & > div {
+    & > div {
+      @include media-breakpoint-only(xs) {
+        margin: 0 20px;
+      }
+    }
+  }
+}
