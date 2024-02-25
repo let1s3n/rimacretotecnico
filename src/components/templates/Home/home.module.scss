@@ -1,17 +1,25 @@
 @import '@/sass/abstracts/variables';
 @import 'bootstrap/scss/mixins';
 
-.loginContainer {
+.homeContainer {
   padding: 6rem 0px 7rem;
   overflow: hidden;
+
+  background-color: $gray10;
+}
+
+.loginContainer {
   display: flex;
   column-gap: 8rem;
-
   &__right {
     display: flex;
     flex-direction: column;
     max-width: 352px;
     row-gap: 1.5rem;
+  }
+
+  .familyLogin {
+    border-radius: 1.5rem;
   }
 }
 
