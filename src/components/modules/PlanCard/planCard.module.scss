@@ -8,4 +8,65 @@
   border-radius: 1.5rem;
   box-shadow: 0 1px 32px #aeacf359;
   padding: 4.25rem 2rem 51px;
+  position: relative;
+  &__header {
+    display: flex;
+    justify-content: space-between;
+    padding: 0px 0px 1.5rem;
+    border-bottom: 1px solid $neutrals400;
+  }
+
+  &__body {
+    /* margin: 1.5rem 0px 2.5rem; */
+    margin: 1.5rem 0px 0px;
+
+    ul {
+      display: flex;
+      flex-direction: column;
+      row-gap: 1.5rem;
+      padding-left: 1.5rem;
+
+      li {
+        p {
+          line-height: 28px;
+        }
+      }
+    }
+  }
+
+  &__button {
+    width: 224px;
+    height: 48px;
+    background-color: $red500;
+    border-radius: 32px;
+    border: none;
+    font-size: 18px;
+    font-weight: 700;
+    color: $white;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0px;
+    position: absolute;
+    bottom: 51px;
+  }
+
+  &__btnRecomendado {
+    width: 122px;
+    height: 20px;
+    background-color: $green400;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0px;
+    position: absolute;
+    top: 40px;
+    left: 32px;
+    font-size: 12px;
+    font-weight: 900;
+    letter-spacing: 0.4px;
+    border-radius: 6px;
+    border: none;
+  }
 }

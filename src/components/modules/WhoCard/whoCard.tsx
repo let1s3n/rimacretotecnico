@@ -1,8 +1,23 @@
-import React from 'react';
+import React, { useState } from 'react';
 import styles from './whoCard.module.scss';
 import Image from 'next/image';
 import { Form } from 'react-bootstrap';
-const whoCard = ({ type }: { type: string }) => {
+const whoCard = ({
+  type,
+  setIsChecked,
+  setCheckedValue,
+}: {
+  type: string;
+  setIsChecked: React.Dispatch<React.SetStateAction<boolean>>;
+  setCheckedValue: React.Dispatch<React.SetStateAction<string>>;
+}) => {
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    if (e.target.checked) {
+      console.log(e.target.value);
+    }
+    setIsChecked(true);
+    setCheckedValue(e.target.value);
+  };
   return (
     <div className={styles.radioContainer}>
       <input
@@ -11,6 +26,7 @@ const whoCard = ({ type }: { type: string }) => {
         hidden
         value={type === 'forme' ? 'forme' : 'forsomeoneelse'}
         name="plan"
+        onChange={handleChange}
       />
       <label
         htmlFor={type === 'forme' ? 'opt1' : 'opt2'}
