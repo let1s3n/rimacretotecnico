@@ -11,6 +11,14 @@ const resumen = ({
   selectedUserData,
   userData,
 }: InferGetStaticPropsType<GetStaticProps>) => {
+  useEffect(() => {
+    console.log('userData: ', userData);
+  }, [userData]);
+
+  useEffect(() => {
+    console.log('selectedPlanData: ', selectedPlanData);
+  }, [selectedPlanData]);
+
   return (
     <section className={styles.resumenContainer}>
       <BreadCrumb />
@@ -32,7 +40,9 @@ const resumen = ({
             </h1>
             <div className={styles.resumenContainer__content}>
               <div className={styles.resumenContainer__content__header}>
-                <p style={{letterSpacing:"0.8px"}}>PRECIOS CALCULADOS PARA:</p>
+                <p style={{ letterSpacing: '0.8px' }}>
+                  PRECIOS CALCULADOS PARA:
+                </p>
 
                 <div className="d-flex" style={{ columnGap: '.75rem' }}>
                   <Image
@@ -53,13 +63,13 @@ const resumen = ({
               <div className={styles.resumenContainer__content__body}>
                 <div className="mt-3">
                   <p className="fw-bold mb-1">Responsable de pago</p>
-                  <p className="fs-14 mb-1">DNI: 444888888</p>
-                  <p className="fs-14 mb-1">Celular: 5130216147</p>
+                  <p className="fs-14 mb-1">{`DNI: ${userData?.nroDoc}`}</p>
+                  <p className="fs-14 mb-1">{`Celular: ${userData?.phone}`}</p>
                 </div>
                 <div className="mt-3">
                   <p className="fw-bold mb-1">Plan elegido</p>
-                  <p className="fs-14 mb-1">Plan en Casa y Clínica</p>
-                  <p className="fs-14 mb-1">Costo del Plan: $99 al mes</p>
+                  <p className="fs-14 mb-1">{selectedPlanData?.title}</p>
+                  <p className="fs-14 mb-1">{`Costo del Plan: $${selectedPlanData?.price} al mes`}</p>
                 </div>
               </div>
             </div>
