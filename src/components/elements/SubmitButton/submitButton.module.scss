@@ -16,6 +16,7 @@
   border: none;
   margin-top: 20px;
   letter-spacing: 0.4px;
+  z-index: 500;
   @include media-breakpoint-up(md) {
     margin-top: 8px;
     width: 195px;

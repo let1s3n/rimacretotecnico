@@ -133,7 +133,7 @@ const customForm = ({ setUserData }: Props) => {
           id="default-checkbox1"
           label="Acepto la Política de Privacidad"
           className="d-flex align-items-center BRSonomaRegular fs-12 m-0"
-          style={{ columnGap: '.75rem' }}
+          style={{ columnGap: '.75rem', zIndex: '500' }}
           {...register('privacyCheck', { required: true })}
         />
 
@@ -142,7 +142,7 @@ const customForm = ({ setUserData }: Props) => {
           id="default-checkbox2"
           label="Acepto la Política de Comunicaciones Comerciales"
           className="d-flex align-items-center BRSonomaRegular fs-12 m-0"
-          style={{ columnGap: '.75rem' }}
+          style={{ columnGap: '.75rem', zIndex: '500' }}
           {...register('commercialCheck', { required: true })}
         />
       </div>
