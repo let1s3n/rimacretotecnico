@@ -2,6 +2,8 @@ import React from 'react';
 import { GetStaticProps, InferGetStaticPropsType } from 'next';
 import Image from 'next/image';
 import BreadCrumb from '@/components/elements/BreadCrumb/breadCrumb';
+import BreadCrumbMobile from '@/components/elements/BreadCrumbMobile/breadCrumbMobile';
+import useWindowDimensions from '@/hooks/useWindowDimensions';
 import { Container } from 'react-bootstrap';
 import GoBack from '@/components/elements/GoBack/goBack';
 import styles from './resumen.module.scss';
@@ -10,9 +12,10 @@ const resumen = ({
   selectedUserData,
   userData,
 }: InferGetStaticPropsType<GetStaticProps>) => {
+  const { height, width } = useWindowDimensions();
   return (
     <section className={styles.resumenContainer}>
-      <BreadCrumb />
+      {width > 576 ? <BreadCrumb /> : <BreadCrumbMobile />}
 
       <section className={styles.resumenContainer__contentSection}>
         <Container
@@ -20,7 +23,7 @@ const resumen = ({
             styles.resumenContainer__contentContainer + ' g-0 position-relative'
           }
         >
-          <GoBack />
+          {width > 576 ? <GoBack /> : null}
 
           <div
             className="d-flex flex-column align-items-center align-items-md-start"

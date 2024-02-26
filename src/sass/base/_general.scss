@@ -90,3 +90,24 @@ dl {
     }
   }
 } */
+
+progress {
+  border-radius: 20px;
+  width: 212px;
+  height: 6px;
+  /*  margin-left: -11.5%;
+  box-shadow: 1px 1px 4px rgba( 0, 0, 0, 0.2 ); */
+}
+progress::-webkit-progress-bar {
+  background-color: $neutrals400;
+  border-radius: 20px;
+}
+progress::-webkit-progress-value {
+  background-color: $blueberry600;
+  border-radius: 20px;
+  /* 
+  box-shadow: 1px 1px 5px 3px rgba( 255, 0, 0, 0.8 ); */
+}
+progress::-moz-progress-bar {
+  /* style rules */
+}

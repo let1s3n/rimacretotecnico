@@ -2,17 +2,18 @@
 @import 'bootstrap/scss/mixins';
 
 .goBack {
-  display: none;
+  /* display: none; */
   column-gap: 0.5rem;
   align-items: center;
-  position: absolute;
-  top: 0px;
-  left: 96px;
-  @include media-breakpoint-up(md) {
+
+  @include media-breakpoint-up(sm) {
+    position: absolute;
+    top: 0px;
+    left: 96px;
     display: flex;
   }
   &__button {
-    border: 2px solid $blueberry600;
+    border: 2px solid $neutrals500;
     border-radius: 50%;
     width: 20px;
     height: 20px;
@@ -20,6 +21,11 @@
     align-items: center;
     justify-content: center;
     padding: 0px;
+    background-color: unset;
+
+    @include media-breakpoint-up(sm) {
+      border: 2px solid $blueberry600;
+    }
   }
 
   &__text {
@@ -27,5 +33,9 @@
     font-size: 18px;
     line-height: 20px;
     color: $blueberry600;
+    display: none;
+    @include media-breakpoint-up(sm) {
+      display: block;
+    }
   }
 }

@@ -14,5 +14,6 @@ const nextConfig = {
   devIndicators: {
     buildActivity: false,
   },
+  experimental: { scrollRestoration: true, },
 };
 export default withPlaiceholder(nextConfig);

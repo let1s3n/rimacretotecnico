@@ -6,7 +6,9 @@ import GoBack from '@/components/elements/GoBack/goBack';
 import WhoCard from '@/components/modules/WhoCard/whoCard';
 import PlanCard from '@/components/modules/PlanCard/planCard';
 import BreadCrumb from '@/components/elements/BreadCrumb/breadCrumb';
+import BreadCrumbMobile from '@/components/elements/BreadCrumbMobile/breadCrumbMobile';
 import PlansRes from '@/types/plansRes';
+import useWindowDimensions from '@/hooks/useWindowDimensions';
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
 import Slider from 'react-slick';
@@ -21,7 +23,7 @@ const planes = ({
   const [isChecked, setIsChecked] = useState(false);
   const [checkedValue, setCheckedValue] = useState('');
   const userAge = UseGetAge(user.birthDay);
-
+  const { height, width } = useWindowDimensions();
   var settings = {
     dots: true,
     infinite: false,
@@ -33,14 +35,15 @@ const planes = ({
 
   return (
     <section className={styles.planesContainer}>
-      <BreadCrumb />
+      {width > 576 ? <BreadCrumb /> : <BreadCrumbMobile />}
+
       <section className={styles.planesContainer__opcionesSection}>
         <Container
           className={
             styles.planesContainer__opcionesContent + ' g-0 position-relative'
           }
         >
-          <GoBack />
+          {width > 576 ? <GoBack /> : null}
 
           <div
             className="d-flex flex-column justify-content-center align-items-center"
