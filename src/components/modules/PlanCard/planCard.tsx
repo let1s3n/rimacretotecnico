@@ -1,7 +1,9 @@
 import React, { useEffect } from 'react';
 import Image from 'next/image';
 import { GetStaticProps, InferGetStaticPropsType } from 'next';
+import { useRouter } from 'next/navigation';
 import styles from './planCard.module.scss';
+
 const planCard = ({
   userData,
   title,
@@ -9,13 +11,21 @@ const planCard = ({
   description,
   age,
   userName,
+  userLastName,
   checkedValue,
   recomendado,
+  setSelectedPlanData,
+  setSelectedUserData,
 }: InferGetStaticPropsType<GetStaticProps>) => {
+  const router = useRouter();
   useEffect(() => {
     console.log('description: ', description);
   }, [description]);
-
+  const handleClick = () => {
+    setSelectedPlanData({ title, price });
+    setSelectedUserData({ age, userName,userLastName });
+    router.push('/resumen');
+  };
   return (
     <div className={styles.planCard}>
       {recomendado ? (
@@ -89,7 +99,9 @@ const planCard = ({
         </ul>
       </div>
 
-      <button className={styles.planCard__button}>Seleccionar Plan</button>
+      <button className={styles.planCard__button} onClick={handleClick}>
+        Seleccionar Plan
+      </button>
     </div>
   );
 };

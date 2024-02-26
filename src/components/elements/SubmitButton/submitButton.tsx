@@ -5,7 +5,7 @@ const submitButton = ({ status }: InferGetStaticPropsType<GetStaticProps>) => {
   return (
     <button
       className={
-        styles.submitButton + ' BRSonomaBold ' + (status ? ' ' : styles.inactive)
+        styles.submitButton + ' BRSonomaRegular ' + (status ? ' ' : styles.inactive)
       }
     >
       Cotiza aquí

@@ -1,17 +1,26 @@
-import React, { useState, useEffect, Dispatch, SetStateAction } from 'react';
+import React, {
+  useState,
+  useEffect,
+  Dispatch,
+  SetStateAction,
+  useContext,
+} from 'react';
 import Planes from '@/components/templates/Planes/planes';
 import Head from 'next/head';
 import { UserContext } from '@/pages/_app';
-import { createContext, useContext } from 'react';
 import { GetStaticProps, InferGetStaticPropsType } from 'next';
-
+interface Props {
+  setSelectedPlanData: Dispatch<SetStateAction<string>>;
+}
 const planes = ({
   userRes,
   plansRes,
+  setSelectedPlanData,
+  setSelectedUserData,
 }: InferGetStaticPropsType<GetStaticProps>) => {
   const userData = useContext(UserContext);
-
- 
+  const [user, setUser] = useState(userRes);
+  const [plans, setPlans] = useState(plansRes);
 
   return (
     <>
@@ -21,7 +30,13 @@ const planes = ({
           Inversión
         </title>
       </Head>
-      <Planes userData={userData} userRes={userRes} plansRes={plansRes} />
+      <Planes
+        setSelectedPlanData={setSelectedPlanData}
+        setSelectedUserData={setSelectedUserData}
+        userData={userData}
+        user={user}
+        plans={plans}
+      />
     </>
   );
 };

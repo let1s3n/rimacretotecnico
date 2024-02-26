@@ -5,10 +5,10 @@
   input {
     &:checked {
       & + .whoCard {
-        .whoCard__radioButton{
-        background-color: $success;
-        box-shadow: 0 0 0 1px inset $success;
-      }
+        .whoCard__radioButton {
+          background-color: $success;
+          box-shadow: 0 0 0 1px inset $success;
+        }
       }
     }
   }
@@ -60,5 +60,7 @@
   &__text {
     line-height: 20px;
     font-size: 12px;
+    letter-spacing: 0.2px;
+    color: $neutrals700;
   }
 }

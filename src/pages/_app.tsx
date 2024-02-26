@@ -6,10 +6,15 @@ import { createContext, useContext } from 'react';
 
 import DefaultLayout from '@/components/layout/DefaultLayout/defaultLayout';
 import '@/sass/app.scss';
+
 export const UserContext = createContext(null);
+export const PlanContext = createContext(null);
+export const SelectedUserContext = createContext(null);
+
 export default function App({ Component, pageProps }: AppProps) {
-  
   const [userData, setUserData] = useState(null);
+  const [selectedPlanData, setSelectedPlanData] = useState(null);
+  const [selectedUserData, setSelectedUserData] = useState(null);
   return (
     <>
       <Head>
@@ -31,7 +36,16 @@ export default function App({ Component, pageProps }: AppProps) {
             }
           `}</style>
           <UserContext.Provider value={userData}>
-            <Component setUserData={setUserData} {...pageProps} />
+            <PlanContext.Provider value={selectedPlanData}>
+              <SelectedUserContext.Provider value={selectedUserData}>
+                <Component
+                  setUserData={setUserData}
+                  setSelectedPlanData={setSelectedPlanData}
+                  setSelectedUserData={setSelectedUserData}
+                  {...pageProps}
+                />
+              </SelectedUserContext.Provider>
+            </PlanContext.Provider>
           </UserContext.Provider>
         </DefaultLayout>
       </main>

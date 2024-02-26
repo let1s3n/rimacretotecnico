@@ -17,7 +17,7 @@ export default function DefaultLayout({ children }: LayoutProps) {
     <>
       <NavBar />
       <main className="main-container">{children}</main>
-      {pathname === '/planes' ? null : <Footer />}
+      {pathname === '/planes' || pathname === '/resumen'? null : <Footer />}
     </>
   );
 }

@@ -67,6 +67,32 @@ $utilities: (
     values: $font-sizes,
   ),
 );
+@import 'bootstrap/scss/utilities';
+
+$utilities: map-merge(
+  $utilities,
+  (
+    'border-bottom':
+      map-merge(
+        map-get($utilities, 'border-bottom'),
+        (
+          responsive: true,
+        )
+      ),
+  )
+);
+
+$utilities: map-merge(
+  $utilities,
+  (
+    'border-top':
+      map-merge(
+        map-get($utilities, 'border-top'),
+        (
+          responsive: true,
+        )
+      ),
+  )
+);
 
 @import 'bootstrap/scss/root';
-@import 'bootstrap/scss/utilities';

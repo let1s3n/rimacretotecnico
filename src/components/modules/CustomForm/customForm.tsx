@@ -58,9 +58,9 @@ const customForm = ({ setUserData }: Props) => {
       setStatusButton(false);
     }
 
-    if (formState.isSubmitSuccessful) {
+    /* if (formState.isSubmitSuccessful) {
       reset();
-    }
+    } */
   }, [formState, reset]);
 
   return (
@@ -94,7 +94,7 @@ const customForm = ({ setUserData }: Props) => {
                 value === process.env.NEXT_PUBLIC_USERDOC,
             })}
           />
-          {errors.nroDoc?.type === 'required' && (
+          {/* {errors.nroDoc?.type === 'required' && (
             <p className="fs-12 lh-1 text-danger">
               *Tiene que ingresar un número de documento
             </p>
@@ -109,10 +109,25 @@ const customForm = ({ setUserData }: Props) => {
             <p className="fs-12 lh-1 text-danger">
               *El número de documento ingresado es incorrecto.
             </p>
-          )}
+          )} */}
         </FloatingLabel>
       </InputGroup>
+      {errors.nroDoc?.type === 'required' && (
+        <p className="fs-12 lh-1 text-danger">
+          *Tiene que ingresar un número de documento
+        </p>
+      )}
+      {errors.nroDoc?.type === 'pattern' && (
+        <p className="fs-12 lh-1 text-danger">
+          *El número de documento ingresado no es válido.
+        </p>
+      )}
 
+      {errors.nroDoc?.type === 'validate' && (
+        <p className="fs-12 lh-1 text-danger">
+          *El número de documento ingresado es incorrecto.
+        </p>
+      )}
       <FloatingLabel controlId="floatingInput2" label="Celular">
         <Form.Control
           className={styles.customInput}
@@ -126,24 +141,22 @@ const customForm = ({ setUserData }: Props) => {
               value === process.env.NEXT_PUBLIC_USERPHONE,
           })}
         />
-
-        {errors.phone?.type === 'required' && (
-          <p className="fs-12 lh-1 text-danger">
-            *Tiene que ingresar un número de celular
-          </p>
-        )}
-        {errors.phone?.type === 'pattern' && (
-          <p className="fs-12 lh-1 text-danger">
-            *El número de celular ingresado no es válido.
-          </p>
-        )}
-        {errors.phone?.type === 'validate' && (
-          <p className="fs-12 lh-1 text-danger">
-            *El número de celular ingresado es incorrecto.
-          </p>
-        )}
       </FloatingLabel>
-
+      {errors.phone?.type === 'required' && (
+        <p className="fs-12 lh-1 text-danger">
+          *Tiene que ingresar un número de celular
+        </p>
+      )}
+      {errors.phone?.type === 'pattern' && (
+        <p className="fs-12 lh-1 text-danger">
+          *El número de celular ingresado no es válido.
+        </p>
+      )}
+      {errors.phone?.type === 'validate' && (
+        <p className="fs-12 lh-1 text-danger">
+          *El número de celular ingresado es incorrecto.
+        </p>
+      )}
       <div className="d-flex flex-column" style={{ rowGap: '.5rem' }}>
         <Form.Check
           type="checkbox"
@@ -164,7 +177,12 @@ const customForm = ({ setUserData }: Props) => {
         />
       </div>
 
-      <p>Aplican Términos y Condiciones.</p>
+      <p
+        className="text-decoration-underline text-gray100 fs-12 BRSonomaMedium fw-semibold"
+        style={{ letterSpacing: '0.1px' }}
+      >
+        Aplican Términos y Condiciones.
+      </p>
       <SubmitButton status={statusButton} />
     </Form>
   );

@@ -1,0 +1,43 @@
+@import '@/sass/abstracts/variables';
+@import 'bootstrap/scss/mixins';
+
+.breadCrumb {
+  background-color: $neutrals200;
+  height: 3.5rem;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  column-gap: 1rem;
+  &__step {
+    display: flex;
+    column-gap: 1rem;
+  }
+  &__step__circle {
+    height: 1.5rem;
+    width: 1.5rem;
+    background-color: $blueberry600;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: $white;
+    font-size: 12px;
+    font-weight: 700;
+  }
+
+  &__step__text {
+    font-weight: 700;
+  }
+}
+
+.circle--inactive {
+  background-color: unset;
+  border: 1px solid $neutrals600;
+  color: $neutrals600;
+}
+
+.text--inactive {
+  color: $neutrals600;
+  font-weight: 400;
+}

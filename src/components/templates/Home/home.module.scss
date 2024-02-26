@@ -2,15 +2,22 @@
 @import 'bootstrap/scss/mixins';
 
 .homeContainer {
-  padding: 6rem 0px 7rem;
+  padding: 6rem 0px 6rem;
   overflow: hidden;
-
+  position: relative;
   background-color: $gray10;
+  @include media-breakpoint-up(md) {
+    padding: 6rem 0px 7rem;
+  }
 }
 
 .loginContainer {
   display: flex;
   column-gap: 8rem;
+  justify-content: center;
+  @include media-breakpoint-up(md) {
+    justify-content: flex-start;
+  }
   &__right {
     display: flex;
     flex-direction: column;
@@ -20,6 +27,22 @@
 
   .familyLogin {
     border-radius: 1.5rem;
+    display: none;
+    z-index: 100;
+    
+    @include media-breakpoint-up(md) {
+      display: block;
+    }
+
+    &--mobile {
+      border-radius: 1.5rem;
+
+      z-index: 100;
+      display: block;
+      @include media-breakpoint-up(md) {
+        display: none;
+      }
+    }
   }
 }
 
@@ -27,19 +50,49 @@
   position: absolute;
   left: 0px;
   top: 0px;
+  display: none;
+  @include media-breakpoint-up(md) {
+    display: block;
+  }
+  &--mobile {
+    position: absolute;
+    left: 0px;
+    bottom: 0px;
+    display: block;
+    @include media-breakpoint-up(md) {
+      display: none;
+    }
+  }
 }
 .blurAssetRight {
   position: absolute;
   right: 0px;
   top: 0px;
+  display: none;
+  @include media-breakpoint-up(md) {
+    display: block;
+  }
+  &--mobile {
+    position: absolute;
+    right: 0px;
+    top: 0px;
+    display: block;
+    @include media-breakpoint-up(md) {
+      display: none;
+    }
+  }
 }
 
 .customGradient {
   background: $gradient1;
-  width: 172px;
-  height: 24px;
+  width: 151px;
+  height: 20px;
   display: flex;
   justify-content: center;
   align-items: center;
   border-radius: 4px;
+  @include media-breakpoint-up(md) {
+    width: 172px;
+    height: 24px;
+  }
 }

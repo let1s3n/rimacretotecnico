@@ -14,7 +14,10 @@
   background-color: $gray100;
   color: $white;
   border: none;
+  margin-top: 20px;
+  letter-spacing: 0.4px;
   @include media-breakpoint-up(md) {
+    margin-top: 8px;
     width: 195px;
     height: 64px;
     font-size: 20px;
@@ -23,6 +26,6 @@
 }
 
 .inactive {
-  background-color: $gray10;
-  color: $desactivado;
+  background-color: $neutrals200;
+  color: $neutrals500;
 }
