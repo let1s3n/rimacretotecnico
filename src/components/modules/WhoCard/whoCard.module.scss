@@ -56,5 +56,9 @@
     font-size: 12px;
     letter-spacing: 0.2px;
     color: $neutrals700;
+    margin-top: 0.5rem;
+    /* @include media-breakpoint-up(sm) {
+      margin-top: 0px;
+    } */
   }
 }

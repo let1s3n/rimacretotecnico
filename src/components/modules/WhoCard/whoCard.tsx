@@ -41,28 +41,38 @@ const whoCard = ({
         </div>
         {type === 'forme' ? (
           <div className={styles.whoCard__mainContent}>
-            <Image
-              src={`${process.env.NEXT_PUBLIC_CDN}images/general/icons/forMeIcon.svg`}
-              alt="For me icon"
-              width={48}
-              height={48}
-              quality={100}
-            />
-            <h5 className={styles.whoCard__title}>Para mí</h5>
+            <div
+              className="d-flex align-items-center flex-sm-column align-items-sm-start"
+              style={{ columnGap: '.5rem', rowGap: '.5rem' }}
+            >
+              <Image
+                src={`${process.env.NEXT_PUBLIC_CDN}images/general/icons/forMeIcon.svg`}
+                alt="For me icon"
+                width={48}
+                height={48}
+                quality={100}
+              />
+              <h5 className={styles.whoCard__title}>Para mí</h5>
+            </div>
             <p className={styles.whoCard__text}>
               Cotiza tu seguro de salud y agrega familiares si así lo deseas.
             </p>
           </div>
         ) : (
           <div className={styles.whoCard__mainContent}>
-            <Image
-              src={`${process.env.NEXT_PUBLIC_CDN}images/general/icons/forSomeoneElseIcon.svg`}
-              alt="For someone else icon"
-              width={48}
-              height={48}
-              quality={100}
-            />
-            <h5 className={styles.whoCard__title}>Para alguien más</h5>
+            <div
+              className="d-flex align-items-center flex-sm-column align-items-sm-start"
+              style={{ columnGap: '.5rem', rowGap: '.5rem' }}
+            >
+              <Image
+                src={`${process.env.NEXT_PUBLIC_CDN}images/general/icons/forSomeoneElseIcon.svg`}
+                alt="For someone else icon"
+                width={48}
+                height={48}
+                quality={100}
+              />
+              <h5 className={styles.whoCard__title}>Para alguien más</h5>
+            </div>
             <p className={styles.whoCard__text}>
               Realiza una cotización para uno de tus familiares o cualquier
               persona.
