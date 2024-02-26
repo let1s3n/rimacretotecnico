@@ -1,4 +1,4 @@
-import React, { useState, useEffect, Dispatch, SetStateAction } from 'react';
+import React, { Dispatch, SetStateAction } from 'react';
 import Home from '@/components/templates/Home/home';
 import Head from 'next/head';
 interface Props {

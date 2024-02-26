@@ -21,20 +21,6 @@ const planes = ({
   const [isChecked, setIsChecked] = useState(false);
   const [checkedValue, setCheckedValue] = useState('');
   const userAge = UseGetAge(user.birthDay);
-  useEffect(() => {
-    console.log('userData: ', userData);
-  }, [userData]);
-  useEffect(() => {
-    console.log('userAge: ', userAge);
-  }, [userAge]);
-
-  useEffect(() => {
-    console.log('isChecked:', isChecked);
-  }, [isChecked]);
-
-  useEffect(() => {
-    console.log('checkedValue:', checkedValue);
-  }, [checkedValue]);
 
   var settings = {
     dots: true,
@@ -113,24 +99,6 @@ const planes = ({
                       />
                     ) : null;
                   })}
-                  {/* <PlanCard
-                    userData={userData}
-                    userRes={userRes}
-                    plansRes={plansRes}
-                    recomendado={false}
-                  />
-                  <PlanCard
-                    userData={userData}
-                    userRes={userRes}
-                    plansRes={plansRes}
-                    recomendado={true}
-                  />
-                  <PlanCard
-                    userData={userData}
-                    userRes={userRes}
-                    plansRes={plansRes}
-                    recomendado={false}
-                  /> */}
                 </div>
                 <Container fluid className="g-0 d-md-none">
                   <Slider {...settings}>

@@ -1,8 +1,7 @@
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 import { GetStaticProps, InferGetStaticPropsType } from 'next';
 import Image from 'next/image';
 import BreadCrumb from '@/components/elements/BreadCrumb/breadCrumb';
-import { getCookie, setCookie, hasCookie } from 'cookies-next';
 import { Container } from 'react-bootstrap';
 import GoBack from '@/components/elements/GoBack/goBack';
 import styles from './resumen.module.scss';
@@ -11,14 +10,6 @@ const resumen = ({
   selectedUserData,
   userData,
 }: InferGetStaticPropsType<GetStaticProps>) => {
-  useEffect(() => {
-    console.log('userData: ', userData);
-  }, [userData]);
-
-  useEffect(() => {
-    console.log('selectedPlanData: ', selectedPlanData);
-  }, [selectedPlanData]);
-
   return (
     <section className={styles.resumenContainer}>
       <BreadCrumb />

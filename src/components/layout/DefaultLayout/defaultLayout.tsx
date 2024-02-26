@@ -9,15 +9,12 @@ interface LayoutProps {
 
 export default function DefaultLayout({ children }: LayoutProps) {
   const pathname = usePathname();
-  useEffect(() => {
-    console.log('pathname: ', pathname);
-  }, [pathname]);
 
   return (
     <>
       <NavBar />
       <main className="main-container">{children}</main>
-      {pathname === '/planes' || pathname === '/resumen'? null : <Footer />}
+      {pathname === '/planes' || pathname === '/resumen' ? null : <Footer />}
     </>
   );
 }

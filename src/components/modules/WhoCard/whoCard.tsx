@@ -12,9 +12,6 @@ const whoCard = ({
   setCheckedValue: React.Dispatch<React.SetStateAction<string>>;
 }) => {
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    if (e.target.checked) {
-      console.log(e.target.value);
-    }
     setIsChecked(true);
     setCheckedValue(e.target.value);
   };
@@ -58,7 +55,6 @@ const whoCard = ({
           </div>
         ) : (
           <div className={styles.whoCard__mainContent}>
-            {/* <div className={styles.whoCard__radioButton}></div> */}
             <Image
               src={`${process.env.NEXT_PUBLIC_CDN}images/general/icons/forSomeoneElseIcon.svg`}
               alt="For someone else icon"

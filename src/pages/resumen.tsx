@@ -1,4 +1,4 @@
-import React, { useEffect, useContext } from 'react';
+import React, { useContext } from 'react';
 import { PlanContext, UserContext, SelectedUserContext } from '@/pages/_app';
 import Resumen from '@/components/templates/Resumen/resumen';
 const resumen = () => {

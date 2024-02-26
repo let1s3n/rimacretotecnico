@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import Image from 'next/image';
 import { GetStaticProps, InferGetStaticPropsType } from 'next';
 import { useRouter } from 'next/navigation';
@@ -18,12 +18,10 @@ const planCard = ({
   setSelectedUserData,
 }: InferGetStaticPropsType<GetStaticProps>) => {
   const router = useRouter();
-  useEffect(() => {
-    console.log('description: ', description);
-  }, [description]);
+
   const handleClick = () => {
     setSelectedPlanData({ title, price });
-    setSelectedUserData({ age, userName,userLastName });
+    setSelectedUserData({ age, userName, userLastName });
     router.push('/resumen');
   };
   return (
@@ -78,24 +76,6 @@ const planCard = ({
               </li>
             );
           })}
-          {/* <li>
-            <p>
-              <span className="fw-bold">Médico general a domicilio</span> por
-              S/20 y medicinas cubiertas al 100%.
-            </p>
-          </li>
-          <li>
-            <p>
-              <span className="fw-bold">Videoconsulta</span> y orientación
-              telefónica al 100% en medicina general + pediatría.
-            </p>
-          </li>
-          <li>
-            <p>
-              <span className="fw-bold">Indemnización</span> de S/300 en caso de
-              hospitalización por más de un día.
-            </p>
-          </li> */}
         </ul>
       </div>
 

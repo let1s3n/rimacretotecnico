@@ -1,18 +1,7 @@
 import React, { useState, useEffect, Dispatch, SetStateAction } from 'react';
 import { useForm } from 'react-hook-form';
-import { GetStaticProps, InferGetStaticPropsType } from 'next';
-import {
-  Form,
-  InputGroup,
-  Dropdown,
-  DropdownButton,
-  FloatingLabel,
-} from 'react-bootstrap';
-import useOnlyNumbers from '@/hooks/useOnlyNumbers';
-import userData from '@/hooks/useUserData';
-import { useLocalStorage } from 'usehooks-ts';
+import { Form, InputGroup, FloatingLabel } from 'react-bootstrap';
 import { useRouter } from 'next/navigation';
-import { getCookie, setCookie } from 'typescript-cookie';
 import SubmitButton from '@/components/elements/SubmitButton/submitButton';
 import styles from './customForm.module.scss';
 
@@ -42,9 +31,6 @@ const customForm = ({ setUserData }: Props) => {
   });
 
   const onSubmit = (data: any) => {
-    /* setValueNroDoc({ nroDoc: data.nroDoc });
-    setValuePhone({ phone: data.phone }); */
-    console.log('setUserData: ', setUserData);
     setUserData({ ...data });
     router.push('/planes');
   };
@@ -94,22 +80,6 @@ const customForm = ({ setUserData }: Props) => {
                 value === process.env.NEXT_PUBLIC_USERDOC,
             })}
           />
-          {/* {errors.nroDoc?.type === 'required' && (
-            <p className="fs-12 lh-1 text-danger">
-              *Tiene que ingresar un número de documento
-            </p>
-          )}
-          {errors.nroDoc?.type === 'pattern' && (
-            <p className="fs-12 lh-1 text-danger">
-              *El número de documento ingresado no es válido.
-            </p>
-          )}
-
-          {errors.nroDoc?.type === 'validate' && (
-            <p className="fs-12 lh-1 text-danger">
-              *El número de documento ingresado es incorrecto.
-            </p>
-          )} */}
         </FloatingLabel>
       </InputGroup>
       {errors.nroDoc?.type === 'required' && (

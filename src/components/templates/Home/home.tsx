@@ -1,18 +1,8 @@
-import React, {
-  useState,
-  useEffect,
-  Dispatch,
-  SetStateAction,
-  Suspense,
-} from 'react';
+import React, { Dispatch, SetStateAction, Suspense } from 'react';
 import useWindowDimensions from '@/hooks/useWindowDimensions';
-
-import { GetStaticProps, InferGetStaticPropsType } from 'next';
 import Image from 'next/image';
-import Link from 'next/link';
-import { Button, Container, Row } from 'react-bootstrap';
+import { Container } from 'react-bootstrap';
 import CustomForm from '@/components/modules/CustomForm/customForm';
-import { lato } from '@/lib/fonts';
 import styles from './home.module.scss';
 
 interface Props {
@@ -21,10 +11,6 @@ interface Props {
 
 const Home = ({ setUserData }: Props) => {
   const { width, height } = useWindowDimensions();
-
-  useEffect(() => {
-    console.log('setUserData: ', setUserData);
-  }, []);
 
   return (
     <section className={styles.homeContainer + ' g-0'}>

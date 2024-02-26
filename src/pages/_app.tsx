@@ -2,7 +2,7 @@ import { useState } from 'react';
 import type { AppProps } from 'next/app';
 import Head from 'next/head';
 import { lato } from '@/lib/fonts';
-import { createContext, useContext } from 'react';
+import { createContext } from 'react';
 
 import DefaultLayout from '@/components/layout/DefaultLayout/defaultLayout';
 import '@/sass/app.scss';

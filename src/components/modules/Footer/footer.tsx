@@ -1,5 +1,4 @@
 import Image from 'next/image';
-import Link from 'next/link';
 import { Container } from 'react-bootstrap';
 import styles from './footer.module.scss';
 const Footer = () => {
